@@ -1,0 +1,41 @@
+{
+  "name": "auth-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "pm2-runtime start ecosystem.config.js",
+    "dev": "nodemon src/index.ts",
+    "build": "tsc -p .",
+    "lint": "eslint ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/InstagClone/Auth-Service.git"
+  },
+  "author": "Songren Zhao",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/InstagClone/Auth-Service/issues"
+  },
+  "homepage": "https://github.com/InstagClone/Auth-Service#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "pm2": "^4.5.4"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.19.0",
+    "@types/cors": "^2.8.9",
+    "@types/express": "^4.17.11",
+    "@types/node": "^14.14.22",
+    "@typescript-eslint/eslint-plugin": "^4.14.1",
+    "@typescript-eslint/parser": "^4.14.1",
+    "eslint": "^7.19.0",
+    "nodemon": "^2.0.7",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3"
+  }
+}
