@@ -1,6 +1,6 @@
 module.exports = {
   apps : [{
-    name: "url-shortener-song",
+    name: "Auth Server",
     script: 'dist/index.js',
     exec_mode: 'cluster',
     instances: 4,
