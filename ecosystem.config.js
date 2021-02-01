@@ -3,7 +3,7 @@ module.exports = {
     name: "Auth Server",
     script: 'dist/index.js',
     exec_mode: 'cluster',
-    instances: 4,
+    instances: 2,
     watch: true,
   }]
 };
