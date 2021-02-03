@@ -1,8 +1,12 @@
 import { getToken } from '../../services/jwtService';
-import type { Request, Response } from 'express';
+import type { Request, Response, NextFunction } from 'express';
 
-export default async function healthCheck(req: Request, res: Response): Promise<void> {
-  const { username, password, grant_type: grantType } = req.body;
-  const response = await getToken(username, password, grantType);
-  res.send(response);
+export default async function healthCheck(req: Request, res: Response, next: NextFunction): Promise<void> {
+  try {
+    const { username, password } = req.body;
+    const response = await getToken(username, password);
+    res.send(response);
+  } catch (err) {
+    next(err);
+  }
 }
