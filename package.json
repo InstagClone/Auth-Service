@@ -18,6 +18,11 @@
   "bugs": {
     "url": "https://github.com/InstagClone/Auth-Service/issues"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
   "homepage": "https://github.com/InstagClone/Auth-Service#readme",
   "dependencies": {
     "bcrypt": "^5.0.0",
@@ -41,6 +46,7 @@
     "@typescript-eslint/eslint-plugin": "^4.14.1",
     "@typescript-eslint/parser": "^4.14.1",
     "eslint": "^7.19.0",
+    "husky": "^4.3.8",
     "nodemon": "^2.0.7",
     "ts-node": "^9.1.1",
     "typescript": "^4.1.3"
