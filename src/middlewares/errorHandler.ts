@@ -1,11 +1,11 @@
-import type { Request, Response } from 'express';
+import type { Request, Response, NextFunction } from 'express';
 
 interface HttpException {
   status?: number;
   message?: string;
 }
 
-export default function errorHandler(err: HttpException, _req: Request, res: Response): void {
+export default function errorHandler(err: HttpException, _req: Request, res: Response, next: NextFunction): void {
   const error = {
     status: err?.status ?? 500,
     message: err?.message ?? 'Internal Server Error'
