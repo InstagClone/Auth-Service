@@ -8,7 +8,8 @@ const accessTokenValidation: requestValidateSchema = {
   bodySchema: Joi.object().keys({
     username: Joi.string().required(),
     password: Joi.string().required(),
-    grant_type: Joi.string().required()
+    grant_type: Joi.string().required(),
+    scopes: Joi.string().valid('openid profile').required()
   })
 }
 

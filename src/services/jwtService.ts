@@ -58,14 +58,14 @@ export async function getIdToken(userId: string, username: string): Promise<stri
   return idToken;
 }
 
-export async function getToken(username: string, password: string): Promise<ITokenResponse> {
+export async function getToken(username: string, password: string, scopes: string): Promise<ITokenResponse> {
   const isVerifiedMember: User = await verifiedMember(username, password);
   const accessToken = await getAccessToken(isVerifiedMember.userId);
   const idToken = await getIdToken(isVerifiedMember.userId, isVerifiedMember.username);
   return {
     access_token: accessToken,
     id_token: idToken,
-    scope: 'openid profile',
+    scope: scopes,
     expires_in: EXPIRES_IN
   };
 } 
